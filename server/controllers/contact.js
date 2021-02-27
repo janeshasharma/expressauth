@@ -22,7 +22,7 @@ module.exports.displayContactList = (req, res, next) => {
             contactList: contactList, 
             displayName: req.user ? req.user.displayName : ''});      
         }
-    });
+    }).sort({contactname:1});
 }
 
 module.exports.displayAddPage = (req, res, next) => {
@@ -46,7 +46,7 @@ module.exports.processAddPage = (req, res, next) => {
         else
         {
             // refresh the book list
-            res.redirect('/contact');
+            res.redirect('/contact-list');
         }
     });
 
